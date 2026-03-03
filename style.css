@@ -1,0 +1,281 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   HERO (INDEX PAGE)
+========================= */
+
+.hero {
+  position: relative; /* add this */
+  min-height: 100vh;
+  width: 100%;
+  background: #1f2a44;
+  color: #e1d9cd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* add this */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.1; /* adjust if needed */
+
+  pointer-events: none;
+}
+
+.hero-container {
+  width: 85%;
+  max-width: 1000px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 1;
+}
+
+.left,
+.right {
+  width: 30%;
+}
+
+.left h1,
+.right h1 {
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.small-name {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #cccccc;
+}
+
+.center {
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+.center img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 20px;
+  box-shadow: 30px 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating circle */
+
+.floating-btn {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  background: #e1d9cd;
+  color: #1f2a44;
+
+  padding: 12px 16px; /* stretch horizontally */
+  height: auto; /* remove fixed height */
+  width: auto; /* remove fixed width */
+
+  border-radius: 30px; /* rounded rectangle (pill shape) */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* About button */
+
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  background: #1f2a44;
+  color: #e1d9cd;
+  border: 2px solid #e1d9cd;
+
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #e1d9cd;
+  color: #1f2a44;
+}
+
+/* Responsive Hero */
+
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .left,
+  .right,
+  .center {
+    width: 100%;
+  }
+
+  .left h1,
+  .right h1 {
+    font-size: 38px;
+  }
+
+  .floating-btn {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-section {
+  min-height: 100vh;
+  background: #e1d9cd;
+  color: #1f2a44;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 60px 10%;
+}
+
+.left-content {
+  width: 50%;
+}
+
+.right-content {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: 24px;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.info-table th,
+.info-table td {
+  padding: 10px;
+  border-bottom: 1px solid #1f2a44;
+  text-align: left;
+  font-size: 14px;
+}
+
+.info-table th {
+  width: 40%;
+  font-weight: 600;
+}
+
+.skill-list {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.skill-list li {
+  margin-bottom: 6px;
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Tilted Frame Effect */
+
+.image-container {
+  perspective: 1000px; /* enables 3D depth */
+  width: 280px;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 25px;
+
+  transform: rotateY(-12deg); /* pushes left side back */
+  transform-origin: center;
+  box-shadow: 30px 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Back button */
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: #1f2a44;
+  color: #e1d9cd;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #e1d9cd;
+  color: #1f2a44;
+  border: 1px solid #1f2a44;
+}
+
+/* Responsive Profile */
+
+@media (max-width: 900px) {
+  .profile-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left-content,
+  .right-content {
+    width: 100%;
+  }
+}
